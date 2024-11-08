@@ -41,6 +41,7 @@
             <TextBlock HorizontalAlignment="Left" Height="382" Margin="90,492,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Text="This website is designed for Koi enthusiasts, offering features to assist with feeding, pond maintenance, and health monitoring, helping ensure your Koi thrive." FontSize="36" Foreground="#FFBB5601" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="77" Margin="90,284,0,0" TextWrapping="Wrap" Text="FPT TTKoi" VerticalAlignment="Top" Width="366" FontSize="48" FontWeight="Bold" Foreground="#FF6D2800"/>
             <TextBlock HorizontalAlignment="Left" Height="131" Margin="90,361,0,0" TextWrapping="Wrap" Text="Koi Care System at Home" VerticalAlignment="Top" Width="366" FontSize="44" FontWeight="Bold" Foreground="#FFA93700"/>
+            <TextBlock x:Name="WelcomeLabel" HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Welcome, user" VerticalAlignment="Top" Width="456" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
         </Grid>
     </DockPanel>
 </Window>

@@ -8,11 +8,11 @@
     <StackPanel Width="200" Background="LightGray">
         <Image Height="100" Width="100" Source="/Images/Fpt_TTKoi_logo.png" Margin="50"/>
         <Button x:Name="PondButton" Content="Pond" Height="50" Click="PondButton_Click"/>
-        <Button Content="Kois" Height="50"/>
-        <Button Content="Salt Calculator" Height="50"/>
-        <Button Content="Food Calculator" Height="50"/>
-        <Button Content="Recommendation" Height="50"/>
-        <Button Content="Water Parameters" Height="50"/>
+        <Button x:Name="KoisButton" Content="Kois" Height="50" Click="KoisButton_Click"/>
+        <Button x:Name="SaltButton" Content="Salt Calculator" Height="50" Click="SaltButton_Click"/>
+        <Button x:Name="FoodButton" Content="Food Calculator" Height="50" Click="FoodButton_Click"/>
+        <Button x:Name="RecommendButton" Content="Recommendation" Height="50" Click="RecommendButton_Click"/>
+        <Button x:Name="ParameterButton" Content="Water Parameters" Height="50" Click="ParameterButton_Click"/>
         <StackPanel VerticalAlignment="Bottom">
             <Button x:Name="LogOutButton" Content="Log Out" Height="50" Click="LogOutButton_Click" Margin="10, 170, 10, 10"/>
             <Button x:Name="QuitButton" Content="Quit" Height="50" Click="QuitButton_Click"/>
