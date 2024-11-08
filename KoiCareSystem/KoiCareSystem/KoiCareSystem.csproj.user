@@ -34,6 +34,9 @@
     <Compile Update="SaltCalculatorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SidebarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminWindow.xaml">
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SaltCalculatorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SidebarControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
