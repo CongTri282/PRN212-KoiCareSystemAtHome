@@ -1,0 +1,53 @@
+﻿<Window x:Class="KoiCareSystem.Components.PondAction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiCareSystem.Components"
+        mc:Ignorable="d"
+        Title="Pond Action" Height="670" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Pond Action" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Pond Name" Width="742" />
+            <TextBox x:Name="PondName" Width="506" />
+
+            <TextBlock Text="Volume" Width="742" />
+            <TextBox x:Name="Volume" Width="506" />
+
+            <TextBlock Text="Thumbnail" Width="742" />
+            <TextBox x:Name="Thumbnail" Width="506" />
+
+            <TextBlock Text="Depth" Width="742" />
+            <TextBox x:Name="Depth" Width="506" />
+
+            <TextBlock Text="Pumping Capacity" Width="742" />
+            <TextBox x:Name="PumpingCapacity" Width="506" />
+
+            <TextBlock Text="Drain" Width="742" />
+            <TextBox x:Name="Drain" Width="506" />
+
+            <TextBlock Text="Skimmer" Width="742" />
+            <TextBox x:Name="Skimmer" Width="506" />
+
+            <TextBlock Text="Note" Width="742" />
+            <TextBox x:Name="Note" Width="506" Height="70" TextWrapping="Wrap" AcceptsReturn="True" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20px,0,0">
+                <Button x:Name="SaveButton" Content="Save" Width="115" Click="SaveButton_Click" Style="{StaticResource ResourceKey=primary}" Height="35"/>
+                <Button x:Name="CloseButton" Content="Close" Width="100" Click="CloseButton_Click" Style="{StaticResource ResourceKey=secondary}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

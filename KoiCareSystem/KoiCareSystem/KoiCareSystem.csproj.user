@@ -10,6 +10,9 @@
     <Compile Update="AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\PondAction.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="FoodCalculatorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\PondAction.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FoodCalculatorWindow.xaml">

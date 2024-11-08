@@ -38,7 +38,7 @@
         <local:SidebarControl DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Pond List" VerticalAlignment="Top" Width="222" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
-
+            <Button x:Name="AddPondButton" Content="Add Pond" Click="AddPondButton_Click" Style="{StaticResource ResourceKey=action}" Margin="1475,204,109,799"/>
         </Grid>
     </DockPanel>
 </Window>

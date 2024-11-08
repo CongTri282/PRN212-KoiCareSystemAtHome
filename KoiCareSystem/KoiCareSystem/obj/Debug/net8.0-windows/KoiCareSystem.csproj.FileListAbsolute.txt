@@ -97,3 +97,6 @@ E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\o
 E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\KoiCareSystem.pdb
 E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\KoiCareSystem.genruntimeconfig.cache
 E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\ref\KoiCareSystem.dll
+E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\Components\PondAction.g.cs
+E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\App.baml
+E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\Components\PondAction.baml

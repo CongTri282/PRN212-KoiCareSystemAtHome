@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KoiCareSystem.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace KoiCareSystem
         public PondWindow()
         {
             InitializeComponent();
+        }
+
+        private void AddPondButton_Click(object sender, RoutedEventArgs e)
+        {
+            PondAction pondAction = new();
+            pondAction.Show();
+
         }
     }
 }
