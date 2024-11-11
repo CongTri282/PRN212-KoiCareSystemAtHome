@@ -17,10 +17,10 @@ namespace Repositories.Repositories
             return _context.Kois.ToList();
         }
 
-        public Koi? GetKoiByPondId(int pondId)
+        public List<Koi>? GetKoisByPondId(int pondId)
         {
             _context = new();
-            return _context.Kois.FirstOrDefault(k => k.PondId == pondId);
+            return _context.Kois.Where(k => k.PondId == pondId).ToList();
         }
 
         public void AddKoi(Koi koi)

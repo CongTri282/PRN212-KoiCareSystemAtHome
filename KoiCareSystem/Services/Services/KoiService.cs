@@ -17,9 +17,9 @@ namespace Services.Services
             return _repo.GetAllKois();
         }
 
-        public Koi? GetKoiByPondId(int pondId)
+        public List<Koi>? GetKoisByPondId(int pondId)
         {
-            return _repo.GetKoiByPondId(pondId);
+            return _repo.GetKoisByPondId(pondId);
         }
 
         public void AddKoi(Koi kois) {

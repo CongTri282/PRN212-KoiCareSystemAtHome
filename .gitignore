@@ -1,6 +1,6 @@
 # Build output directories
-bin/
-obj/
+KoiCareSystem/bin/
+KoiCareSystem/obj/
 
 # Visual Studio settings and workspace files
 .vs/
