@@ -4,6 +4,32 @@
              xmlns:local="clr-namespace:KoiCareSystem"
              StartupUri="HomeWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Background" Value="#FFBB5601"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+            CornerRadius="5" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF8A65"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="primary" TargetType="Button">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Margin" Value="10"/>
