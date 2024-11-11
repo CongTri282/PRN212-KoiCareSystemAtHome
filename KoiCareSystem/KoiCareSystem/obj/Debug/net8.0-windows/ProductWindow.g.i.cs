@@ -53,7 +53,7 @@ namespace KoiCareSystem {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KoiCareSystem;component/productwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KoiCareSystem;V1.0.0.0;component/productwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ProductWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KoiCareSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ce679bd24ae8f8b7560c981b1e134ee45a39b07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1f54ca25e4d72eb808ae90376b50685c38212e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("KoiCareSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KoiCareSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
