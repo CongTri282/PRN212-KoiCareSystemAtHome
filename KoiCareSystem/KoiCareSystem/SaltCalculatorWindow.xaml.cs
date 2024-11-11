@@ -1,5 +1,5 @@
 ﻿using Repositories.Entities;
-using Repositories.Repositories;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace KoiCareSystem
     /// </summary>
     public partial class SaltCalculatorWindow : Window
     {
-        private readonly PondRepository _pondRepository;
+        private readonly PondService _pondService = new();
         private double _volume;
         private double _currentConcentration;
         private double _desiredConcentration;
@@ -30,13 +30,12 @@ namespace KoiCareSystem
         public SaltCalculatorWindow()
         {
             InitializeComponent();
-            _pondRepository = new PondRepository();
             LoadPonds();
         }
 
         private void LoadPonds()
         {
-            var ponds = _pondRepository.GetAllPonds();
+            var ponds = _pondService.GetAllPonds();
             PondComboBox.ItemsSource = ponds;
             if (ponds.Any())
             {
