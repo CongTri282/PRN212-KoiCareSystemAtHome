@@ -1,7 +1,15 @@
 ﻿<Window x:Class="LoginApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<<<<<<< HEAD
         Title="Login" Height="300" Width="400" Background="#FAF6E3">
+=======
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiCareSystem"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+>>>>>>> main
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="250">
             <!-- Username Label and TextBox -->

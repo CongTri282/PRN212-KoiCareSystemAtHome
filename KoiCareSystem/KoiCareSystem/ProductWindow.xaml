@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="ProductWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="ProductWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+   
+    <DockPanel>
+        <local:SidebarControl DockPanel.Dock="Left"/>
+        <Grid Background="#FAEEE6">
+            <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Recommendation Products" VerticalAlignment="Top" Width="648" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
+
+        </Grid>
+    </DockPanel>
 </Window>
