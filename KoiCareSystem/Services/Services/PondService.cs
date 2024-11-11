@@ -44,7 +44,14 @@ namespace Services.Services
 
         public void DeletePond(Pond pond)
         {
-            _repo.DeletePond(pond);
+            try
+            {
+                _repo.DeletePond(pond);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"An error occurred while deleting the pond: {ex.Message}", ex);
+            }
         }
     }
 }

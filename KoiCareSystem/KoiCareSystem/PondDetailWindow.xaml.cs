@@ -1,4 +1,5 @@
 ﻿using Repositories.Entities;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,28 +21,92 @@ namespace KoiCareSystem
     /// </summary>
     public partial class PondDetailWindow : Window
     {
+        private KoiService _koiService = new();
+        private PondService _pondService = new();
+        private Pond _pond;
+
         public PondDetailWindow(Pond pond)
         {
             InitializeComponent();
-            DisplayPondDetails(pond);
+            _pond = pond;
+            try
+            {
+                DisplayPondDetails(pond);
+                DisplayKoiFish(pond.PondId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while displaying pond details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
-
-        // ... other code
 
         private void DisplayPondDetails(Pond pond)
         {
-            if (!string.IsNullOrEmpty(pond.Thumbnail))
+            try
             {
-                PondThumbnail.Source = new BitmapImage(new Uri(pond.Thumbnail));
-            }
+                if (!string.IsNullOrEmpty(pond.Thumbnail))
+                {
+                    PondThumbnail.Source = new BitmapImage(new Uri(pond.Thumbnail));
+                }
 
-            PondName.Text = pond.Name;
-            PondVolume.Text = pond.Volume.ToString();
-            PondDepth.Text = pond.Depth.ToString();
-            PondPumpingCapacity.Text = pond.PumpingCapacity.ToString();
-            PondDrain.Text = pond.Drain.ToString();
-            PondSkimmer.Text = pond.Skimmer.ToString();
-            PondNote.Text = pond.Note;
+                PondName.Text = pond.Name;
+                PondVolume.Text = pond.Volume.ToString();
+                PondDepth.Text = pond.Depth.ToString();
+                PondPumpingCapacity.Text = pond.PumpingCapacity.ToString();
+                PondDrain.Text = pond.Drain.ToString();
+                PondSkimmer.Text = pond.Skimmer.ToString();
+                PondNote.Text = pond.Note;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while displaying pond details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void DisplayKoiFish(int pondId)
+        {
+            try
+            {
+                var koiFish = _koiService.GetKoisByPondId(pondId);
+                KoiListBox.ItemsSource = koiFish;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while displaying koi fish: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void UpdatePondButton_Click(object sender, RoutedEventArgs e)
+        {
+            var updatePondWindow = new Components.UpdatePond(_pond);
+            updatePondWindow.ShowDialog();
+            try
+            {
+                DisplayPondDetails(_pond);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating pond details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void DeletePondButton_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to delete this pond?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    _pondService.DeletePond(_pond);
+                    PondWindow pondWindow = new();
+                    pondWindow.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while deleting the pond: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
