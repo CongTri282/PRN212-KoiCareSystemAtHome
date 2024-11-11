@@ -51,9 +51,10 @@ namespace KoiCareSystem
                 main.Show();
                 this.Hide();
             }
-            else
+            else if (account.Role == "manager" || account.Role =="admin")
             {
                 AdminWindow main = new();
+                main.user = account; 
                 main.Show();
                 this.Hide();
             }

@@ -23,5 +23,20 @@ namespace KoiCareSystem
         {
             InitializeComponent();
         }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            KoiWindow detailWindow = new();
+            detailWindow.Show();
+            this.Close();
+        }
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+           
+
+            PondWindow detailWindow = new();
+            detailWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Fpt_TTKoi_logo.png" />
+    <None Remove="Images\fish1.jpg" />
+    <None Remove="Images\fish2.jpg" />
     <None Remove="Images\landing.png" />
   </ItemGroup>
 
@@ -20,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\fish1.jpg" />
+    <Resource Include="Images\fish2.jpg" />
     <Resource Include="Images\Fpt_TTKoi_logo.png" />
     <Resource Include="Images\landing.png" />
   </ItemGroup>

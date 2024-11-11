@@ -6,11 +6,73 @@
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
         Title="ProductWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
-   
+
     <DockPanel>
         <local:SidebarControl DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Recommendation Products" VerticalAlignment="Top" Width="648" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
+            <TextBlock HorizontalAlignment="Left" Height="77" Margin="619,850,0,0" TextWrapping="Wrap" Text="A list of fish and tanks that many people trust" VerticalAlignment="Top" Width="648" FontSize="20" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
+            <TextBlock HorizontalAlignment="Left" Height="77" Margin="749,987,0,0" TextWrapping="Wrap" Text="Koi System 2024" VerticalAlignment="Top" Width="648" FontSize="20" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
+
+            <!-- Layout for the 6 recommendation items -->
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- First Row, Three Items -->
+
+                <Grid x:Name="Fish" Grid.Row="0" Grid.Column="0" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Image Source="Images/fish1.jpg" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Shiro Koi" HorizontalAlignment="Center" FontSize="20" Margin="0,173,0,0"/>
+                </Grid>
+
+
+                <Grid x:Name="Fish1" Grid.Row="0" Grid.Column="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="12*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images/fish1.jpg" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="Kohaku" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="67,178,0,0" Grid.ColumnSpan="2"/>
+                </Grid>
+
+
+                <Grid x:Name="Fish2" Grid.Row="0" Grid.Column="2" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Images/fish1.jpg" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Kinbo" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,185,0,0" RenderTransformOrigin="0.5,-0.532"/>
+                </Grid>
+
+                <!-- Second Row, Three Items -->
+                <Grid x:Name="Pond" Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Images/fish2.jpg" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Pond" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,234,0,0"/>
+                </Grid>
+
+                <Grid x:Name="Pond1" Grid.Row="1" Grid.Column="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Images/fish2.jpg" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Pond" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.689,4.054" Margin="0,229,0,0"/>
+                </Grid>
+
+                <Grid  x:Name="Pond2" Grid.Row="1" Grid.Column="2" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Images/fish2.jpg" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Pond" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.468,3.573" Margin="0,223,0,0"/>
+                </Grid>
+            </Grid>
+            <Button Content="View" HorizontalAlignment="Left" Margin="572,0,0,0" VerticalAlignment="Center" Height="42" Width="94" Click="Button_Click1"/>
+            <Button Content="View" HorizontalAlignment="Center" VerticalAlignment="Center" Height="42" Width="94" Click="Button_Click1"/>
+
+            <Button Content="View" HorizontalAlignment="Left" VerticalAlignment="Center" Height="42" Width="94" Margin="1045,0,0,0" RenderTransformOrigin="0.379,0.596" Click="Button_Click1" />
+            <Button Content="View" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="94" Margin="1045,803,0,0" RenderTransformOrigin="0.379,0.596" Click="Button_Click2" />
+            <Button Content="View" HorizontalAlignment="Center" VerticalAlignment="Top" Height="42" Width="94" Margin="0,808,0,0" RenderTransformOrigin="0.379,0.596" Click="Button_Click2" />
+            <Button Content="View" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="94" Margin="572,808,0,0" RenderTransformOrigin="0.379,0.596" Click="Button_Click2" />
 
         </Grid>
     </DockPanel>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repositories.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace KoiCareSystem
     /// </summary>
     public partial class AdminWindow : Window
     {
+        public User? user { get; set; } // user da duoc send tu login page qua
         public AdminWindow()
         {
             InitializeComponent();

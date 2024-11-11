@@ -11,7 +11,7 @@
         <local:SidebarControl DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Water Parameters" VerticalAlignment="Top" Width="456" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
-
+            
         </Grid>
     </DockPanel>
 </Window>
