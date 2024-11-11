@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using Repositories.Entities;
+using Services.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,48 @@ namespace KoiCareSystem
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private UserService _service = new();
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            User? account = _service.Authenticate(UsernameTextBox.Text, PasswordTextBox.Password);
+
+            if (UsernameTextBox.Text.IsNullOrEmpty() || PasswordTextBox.Password.IsNullOrEmpty())
+            {
+                MessageBox.Show("Please enter email and password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (account == null)
+            {
+                MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (account.Role == "member")
+            {
+
+                HomeWindow main = new();
+                main.user = account;
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                AdminWindow main = new();
+                main.Show();
+                this.Hide();
+            }
+
+            
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repositories.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,19 @@ namespace KoiCareSystem
     /// <summary>
     /// Interaction logic for HomeWindow.xaml
     /// </summary>
+    /// 
+     
     public partial class HomeWindow : Window
     {
+        public User? user { get; set; }
         public HomeWindow()
         {
             InitializeComponent();
+        }
+
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            WelcomeLabel.Text = "Welcome: " + user.Name;
         }
     }
 }
