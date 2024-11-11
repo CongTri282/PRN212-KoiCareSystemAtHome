@@ -17,9 +17,19 @@ namespace Services.Services
             return _repo.GetAllPonds();
         }
 
+        public Pond? GetPondById(int pondId)
+        {
+            return _repo.GetPondById(pondId);
+        }
+
         public Pond? GetPondByUserId(string userId)
         {
             return _repo.GetPondByUserId(userId);
+        }
+
+        public List<Pond>? GetPondsByUserId(string userId)
+        {
+            return _repo.GetPondsByUserId(userId);
         }
 
         public void AddPond(Pond pond)

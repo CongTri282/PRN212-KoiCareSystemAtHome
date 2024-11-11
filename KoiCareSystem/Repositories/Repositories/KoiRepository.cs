@@ -23,6 +23,12 @@ namespace Repositories.Repositories
             return _context.Kois.Where(k => k.PondId == pondId).ToList();
         }
 
+        public List<Koi>? GetKoisByUserId(string userId)
+        {
+            _context = new();
+            return _context.Kois.Where(k => k.UserId == userId).ToList();
+        }
+
         public void AddKoi(Koi koi)
         {
             _context = new();

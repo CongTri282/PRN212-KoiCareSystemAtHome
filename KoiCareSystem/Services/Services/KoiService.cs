@@ -22,6 +22,11 @@ namespace Services.Services
             return _repo.GetKoisByPondId(pondId);
         }
 
+        public List<Koi>? GetKoisByUserId(string userId)
+        {
+            return _repo.GetKoisByUserId(userId);
+        }
+
         public void AddKoi(Koi kois) {
             _repo.AddKoi(kois);
         }

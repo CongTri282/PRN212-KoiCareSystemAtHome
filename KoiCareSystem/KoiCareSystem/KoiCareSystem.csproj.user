@@ -10,7 +10,13 @@
     <Compile Update="AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Components\PondAction.xaml.cs">
+    <Compile Update="Components\AddPond.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\DeletePond.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UpdatePond.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="FoodCalculatorWindow.xaml.cs">
@@ -26,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MeasurementsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PondDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PondWindow.xaml.cs">
@@ -45,7 +54,13 @@
     <Page Update="AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Components\PondAction.xaml">
+    <Page Update="Components\AddPond.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\DeletePond.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UpdatePond.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FoodCalculatorWindow.xaml">
@@ -61,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MeasurementsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PondDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PondWindow.xaml">

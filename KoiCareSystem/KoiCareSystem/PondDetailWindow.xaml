@@ -1,0 +1,40 @@
+﻿<Window x:Class="KoiCareSystem.PondDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiCareSystem"
+        mc:Ignorable="d"
+        Title="PondDetailWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <local:SidebarControl DockPanel.Dock="Left"/>
+        <Grid Width="1550">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Pond Details" HorizontalAlignment="Center" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,20,0,20"/>
+            <Image Name="PondThumbnail" Width="500" Height="500" Margin="5,53,5,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top"/>
+            <StackPanel Margin="90,10,0,0" Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Name:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondName" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Volume:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondVolume" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Depth:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondDepth" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Pumping Capacity:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondPumpingCapacity" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Drain:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondDrain" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Skimmer:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondSkimmer" Margin="10,0,0,0" FontSize="28"/>
+                <TextBlock Text="Note:" FontWeight="Bold" Margin="10,5,0,0" FontSize="28"/>
+                <TextBlock Name="PondNote" Margin="10,0,0,0" FontSize="28"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

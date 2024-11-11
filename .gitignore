@@ -1,5 +1,5 @@
 # Ignore bin and obj folders in the main project directory
-KoiCareSystem/bin/
+    KoiCareSystem/bin/
 KoiCareSystem/obj/
 
 # Ignore bin and obj folders within Services and Repositories
