@@ -1,6 +1,13 @@
-# Build output directories
+# Ignore bin and obj folders in the main project directory
 KoiCareSystem/bin/
 KoiCareSystem/obj/
+
+# Ignore bin and obj folders within Services and Repositories
+Services/bin/
+Services/obj/
+Repositories/bin/
+Repositories/obj/
+
 
 # Visual Studio settings and workspace files
 .vs/
