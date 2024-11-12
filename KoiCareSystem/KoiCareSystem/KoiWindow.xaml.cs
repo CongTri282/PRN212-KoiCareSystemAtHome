@@ -1,4 +1,7 @@
-﻿using System;
+﻿using KoiCareSystem.Components;
+using Repositories.Entities;
+using Services.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,28 @@ namespace KoiCareSystem
     /// </summary>
     public partial class KoiWindow : Window
     {
+        private readonly KoiService _koiService = new();
+
         public KoiWindow()
         {
             InitializeComponent();
+            LoadKois();
+        }
+
+        private void LoadKois()
+        {
+            var kois = _koiService.GetAllKois();
+            KoiListBox.ItemsSource = kois;
+        }
+
+        private void KoiListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (KoiListBox.SelectedItem is Koi selectedKoi)
+            {
+                KoiDetailWindow detailWindow = new KoiDetailWindow(selectedKoi);
+                detailWindow.Show();
+                this.Close();
+            }
         }
     }
 }

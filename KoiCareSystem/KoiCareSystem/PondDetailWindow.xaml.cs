@@ -1,4 +1,5 @@
-﻿using Repositories.Entities;
+﻿using KoiCareSystem.Components;
+using Repositories.Entities;
 using Services.Services;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,30 @@ namespace KoiCareSystem
                 {
                     MessageBox.Show($"An error occurred while deleting the pond: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+        }
+
+        private void KoiListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (KoiListBox.SelectedItem is Koi selectedKoi)
+            {
+                KoiDetailWindow detailWindow = new (selectedKoi);
+                detailWindow.Show();
+                this.Close();
+            }
+        }
+
+        private void AddKoiButton_Click(object sender, RoutedEventArgs e)
+        {
+            var addKoi = new Components.AddKoi(_pond);
+            addKoi.ShowDialog();
+            try
+            {
+                DisplayKoiFish(_pond.PondId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating pond details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

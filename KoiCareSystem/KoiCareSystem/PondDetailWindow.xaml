@@ -37,12 +37,13 @@
                 <TextBlock Text="Note:" FontWeight="Bold" Margin="10,5,0,0" FontSize="24"/>
                 <TextBlock Name="PondNote" Margin="10,0,0,0" FontSize="28"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,20,0,0">
-                    <Button Name="UpdatePondButton" Content="Update Pond" Width="150" Height="40" Margin="0,0,10,0" Click="UpdatePondButton_Click"/>
-                    <Button Name="DeletePondButton" Content="Delete Pond" Width="150" Height="40" Click="DeletePondButton_Click"/>
+                    <Button x:Name="UpdatePondButton" Content="Update Pond" Width="150" Height="40" Click="UpdatePondButton_Click"/>
+                    <Button x:Name="DeletePondButton" Content="Delete Pond" Width="150" Height="40" Click="DeletePondButton_Click"/>
                 </StackPanel>
             </StackPanel>
-            <TextBlock Text="Koi Fish in pond:" FontWeight="Bold" Margin="10,110,0,308" FontSize="28" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <ListBox Name="KoiListBox" Margin="10,157,0,15" FontSize="28" Grid.Row="3" Grid.ColumnSpan="2">
+            <TextBlock Text="Koi Fish in pond:" FontWeight="Bold" Margin="10,90,72,328" FontSize="28" Grid.Row="2" Grid.RowSpan="2"/>
+            <Button x:Name="AddKoiButton" Content="Add Koi" Click="AddKoiButton_Click" Style="{StaticResource ResourceKey=action}" Margin="306,97,72,335" Grid.Row="3"/>
+            <ListBox Name="KoiListBox" SelectionChanged="KoiListBox_SelectionChanged" Margin="10,157,0,15" FontSize="28" Grid.Row="3" Grid.ColumnSpan="2">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel />
