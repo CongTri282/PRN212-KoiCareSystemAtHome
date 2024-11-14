@@ -11,7 +11,7 @@
         <local:SidebarControl DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Recommendation Products" VerticalAlignment="Top" Width="648" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
-            <ListBox x:Name="ProductListBox" SelectionChanged="ProductListBox_SelectionChanged" Margin="50,325,50,50" Width="1600">
+            <ListBox x:Name="ProductListBox" Margin="50,325,50,50" Width="1600">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel />

@@ -20,7 +20,7 @@ namespace KoiCareSystem
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public User? user { get; set; }
+        public User? User { get; set; }
         public HomeWindow()
         {
             InitializeComponent();
