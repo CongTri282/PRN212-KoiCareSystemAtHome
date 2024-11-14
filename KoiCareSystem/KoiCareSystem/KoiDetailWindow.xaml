@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="KoiDetailWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="KoiDetailWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <DockPanel>
-        <local:SidebarControl DockPanel.Dock="Left"/>
+        <local:SidebarControl x:Name="Sidebar" DockPanel.Dock="Left"/>
         <Grid Width="1550">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

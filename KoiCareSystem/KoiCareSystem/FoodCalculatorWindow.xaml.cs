@@ -21,6 +21,8 @@ namespace KoiCareSystem
     /// </summary>
     public partial class FoodCalculatorWindow : Window
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         private readonly PondService _pondService = new();
         private readonly KoiService _koiService = new();
         private List<Pond>? _ponds;
@@ -32,12 +34,11 @@ namespace KoiCareSystem
         public FoodCalculatorWindow()
         {
             InitializeComponent();
-            LoadPonds();
         }
 
         private void LoadPonds()
         {
-            _ponds = _pondService.GetAllPonds();
+            _ponds = _pondService.GetPondsByUserId(LoggedInUser.UserId);
             foreach (var pond in _ponds)
             {
                 PondComboBox.Items.Add(new ComboBoxItem { Content = pond.Name, Tag = pond.PondId });
@@ -96,6 +97,20 @@ namespace KoiCareSystem
                 _foodRequirement = _totalWeight * multiplier * (_temperature / 10000);
                 FoodRequirementTextBlock.Text = $"Food Requirement: {_foodRequirement:F0} g/day";
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+            LoadPonds();
         }
     }
 }

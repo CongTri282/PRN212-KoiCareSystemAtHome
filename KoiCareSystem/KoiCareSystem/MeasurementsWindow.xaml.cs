@@ -19,9 +19,23 @@ namespace KoiCareSystem
     /// </summary>
     public partial class MeasurementsWindow : Window
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
         public MeasurementsWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace KoiCareSystem
     public partial class LoginWindow : Window
     {
 
-        private readonly UserService _service = new();
+        private UserService? _service = new();
         public LoginWindow()
         {
             InitializeComponent();
@@ -31,36 +31,41 @@ namespace KoiCareSystem
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            User? account = _service.Authenticate(UsernameTextBox.Text, PasswordTextBox.Password);
-
             if (UsernameTextBox.Text.IsNullOrEmpty() || PasswordTextBox.Password.IsNullOrEmpty())
             {
                 MessageBox.Show("Please enter email and password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
+            if (_service == null)
+            {
+                MessageBox.Show("Authentication service is not available.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            User? account = _service.Authenticate(UsernameTextBox.Text, PasswordTextBox.Password);
+
             if (account == null)
             {
                 MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }
+            }            
+
             if (account.Role == "member")
             {
-
                 HomeWindow main = new();
+                main.LoggedInUser = account;
 
                 main.Show();
                 this.Hide();
             }
             else if (account.Role == "manager" || account.Role == "admin")
             {
-                AdminWindow main = new();
-
+                AdminUser main = new();
+                main.LoggedInUser = account;
                 main.Show();
                 this.Hide();
             }
-
-
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)

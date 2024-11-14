@@ -24,16 +24,21 @@ namespace KoiCareSystem
     {
         private readonly PondService _pondService = new();
 
-        private string userId = "U001";
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
+        
         public PondWindow()
         {
             InitializeComponent();
-            LoadPonds();
         }
 
         private void LoadPonds()
         {
-            var ponds = _pondService.GetPondsByUserId(userId);
+            if (LoggedInUser == null) {
+                MessageBox.Show("Please log in to view your ponds.");
+                return;
+            }
+            var ponds = _pondService.GetPondsByUserId(LoggedInUser.UserId);
             PondListBox.ItemsSource = ponds;
         }
 
@@ -42,6 +47,7 @@ namespace KoiCareSystem
             if (PondListBox.SelectedItem is Pond selectedPond)
             {
                 PondDetailWindow detailWindow = new PondDetailWindow(selectedPond);
+                detailWindow.LoggedInUser = LoggedInUser;
                 detailWindow.Show();
                 this.Close();
             }
@@ -50,7 +56,22 @@ namespace KoiCareSystem
         private void AddPondButton_Click(object sender, RoutedEventArgs e)
         {
             AddPond addPond = new();
+            addPond.LoggedInUser = LoggedInUser;
             addPond.ShowDialog();
+            LoadPonds();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
             LoadPonds();
         }
     }

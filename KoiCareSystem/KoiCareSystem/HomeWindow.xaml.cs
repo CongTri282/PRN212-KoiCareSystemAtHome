@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.Identity.Client.NativeInterop;
+using Microsoft.VisualBasic.ApplicationServices;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +22,25 @@ namespace KoiCareSystem
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public User? User { get; set; }
+        public Repositories.Entities.User? LoggedInUser { get; set; }
         public HomeWindow()
         {
             InitializeComponent();
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            WelcomeLabel.Text = "Welcome: " + User.Name;
+            if (LoggedInUser != null)
+            {
+                WelcomeLabel.Text = "Welcome: " + LoggedInUser.Name;
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
         }
     }
 }

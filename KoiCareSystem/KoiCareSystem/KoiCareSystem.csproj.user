@@ -7,7 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AdminWindow.xaml.cs">
+    <Compile Update="AdminCategories.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminRecommendation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminSidebarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\AddCategory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\AddKoi.xaml.cs">
@@ -16,10 +28,25 @@
     <Compile Update="Components\AddPond.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\AddProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UpdateCategory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\UpdateKoi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\UpdatePond.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UpdateProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UpdateUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="FoodCalculatorWindow.xaml.cs">
@@ -57,7 +84,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AdminWindow.xaml">
+    <Page Update="AdminCategories.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminRecommendation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminSidebarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\AddCategory.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\AddKoi.xaml">
@@ -66,10 +105,25 @@
     <Page Update="Components\AddPond.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Components\AddProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UpdateCategory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\UpdateKoi.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\UpdatePond.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UpdateProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UpdateUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FoodCalculatorWindow.xaml">

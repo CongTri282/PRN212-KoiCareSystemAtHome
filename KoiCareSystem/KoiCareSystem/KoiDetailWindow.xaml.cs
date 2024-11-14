@@ -25,6 +25,8 @@ namespace KoiCareSystem
     {
         private readonly KoiService _koiService = new();
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         private Koi _koi;
 
         public KoiDetailWindow(Koi koi)
@@ -73,7 +75,23 @@ namespace KoiCareSystem
             {
                 _koiService.DeleteKoi(_koi);
                 MessageBox.Show("Koi deleted successfully.");
+                KoiWindow koiWindow = new();
+                koiWindow.LoggedInUser = LoggedInUser;
+                koiWindow.Show();
                 this.Close();
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
             }
         }
     }

@@ -17,7 +17,7 @@ INSERT INTO [User] (UserId, Email, Password, Role, Name)
 VALUES
     ('U001', 'member1@example.com', 'Abc@123', 'member', 'Member One'),
     ('U002', 'member2@example.com', 'Abc@123', 'member', 'Member Two'),
-    ('U003', 'admin@example.com', 'Abc@123', 'admin', 'Admin User'),
+    ('U003', 'admin@example	.com', 'Abc@123', 'admin', 'Admin User'),
     ('U004', 'manager@example.com', 'Abc@123', 'manager', 'Manager User');
 
 

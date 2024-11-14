@@ -21,5 +21,25 @@ namespace Services.Services
         {
             return _repo.GetById(productId);
         }
+
+        public void AddProduct(ExternalProduct product)
+        {
+            _repo.Add(product);
+        }
+
+        public void UpdateProduct(ExternalProduct product)
+        {
+            _repo.Update(product);
+        }
+
+        public void DeleteProduct(ExternalProduct product)
+        {
+            _repo.Delete(product);
+        }
+
+        public List<ExternalProduct> GetProductsByCategory(int categoryId)
+        {
+            return _repo.GetProductsByCategory(categoryId);
+        }
     }
 }

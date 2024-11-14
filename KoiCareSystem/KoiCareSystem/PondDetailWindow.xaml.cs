@@ -26,6 +26,8 @@ namespace KoiCareSystem
         private PondService _pondService = new();
         private Pond _pond;
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public PondDetailWindow(Pond pond)
         {
             InitializeComponent();
@@ -100,6 +102,7 @@ namespace KoiCareSystem
                 {
                     _pondService.DeletePond(_pond);
                     PondWindow pondWindow = new();
+                    pondWindow.LoggedInUser = LoggedInUser;
                     pondWindow.Show();
                     this.Close();
                 }
@@ -115,6 +118,7 @@ namespace KoiCareSystem
             if (KoiListBox.SelectedItem is Koi selectedKoi)
             {
                 KoiDetailWindow detailWindow = new (selectedKoi);
+                detailWindow.LoggedInUser = LoggedInUser;
                 detailWindow.Show();
                 this.Close();
             }
@@ -123,6 +127,7 @@ namespace KoiCareSystem
         private void AddKoiButton_Click(object sender, RoutedEventArgs e)
         {
             var addKoi = new Components.AddKoi(_pond);
+            addKoi.LoggedInUser = LoggedInUser;
             addKoi.ShowDialog();
             try
             {
@@ -131,6 +136,19 @@ namespace KoiCareSystem
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while updating pond details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
             }
         }
     }

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="MeasurementsWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="MeasurementsWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     
     <DockPanel>
-        <local:SidebarControl DockPanel.Dock="Left"/>
+        <local:SidebarControl x:Name="Sidebar" DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Water Parameters" VerticalAlignment="Top" Width="456" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
 

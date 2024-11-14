@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\App.xaml
-16-1543635039
+251412327640
 
-191314724046
+28-979376566
 246-59748237
-AdminWindow.xaml;Components\AddKoi.xaml;Components\AddPond.xaml;Components\UpdateKoi.xaml;Components\UpdatePond.xaml;FoodCalculatorWindow.xaml;HomeWindow.xaml;KoiDetailWindow.xaml;KoiWindow.xaml;LoginWindow.xaml;MeasurementsWindow.xaml;PondDetailWindow.xaml;PondWindow.xaml;ProductWindow.xaml;SaltCalculatorWindow.xaml;SidebarControl.xaml;
+AdminCategories.xaml;AdminRecommendation.xaml;AdminSidebarControl.xaml;AdminUser.xaml;Components\AddCategory.xaml;Components\AddKoi.xaml;Components\AddPond.xaml;Components\AddProduct.xaml;Components\AddUser.xaml;Components\UpdateCategory.xaml;Components\UpdateKoi.xaml;Components\UpdatePond.xaml;Components\UpdateProduct.xaml;Components\UpdateUser.xaml;FoodCalculatorWindow.xaml;HomeWindow.xaml;KoiDetailWindow.xaml;KoiWindow.xaml;LoginWindow.xaml;MeasurementsWindow.xaml;PondDetailWindow.xaml;PondWindow.xaml;ProductWindow.xaml;SaltCalculatorWindow.xaml;SidebarControl.xaml;
 
 False
 

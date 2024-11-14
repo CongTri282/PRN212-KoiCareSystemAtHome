@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="FoodCalculatorWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="FoodCalculatorWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <DockPanel>
-        <local:SidebarControl DockPanel.Dock="Left"/>
+        <local:SidebarControl x:Name="Sidebar" DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <TextBlock Text="Koi Food Calculator" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800" HorizontalAlignment="Center" Margin="0,20,0,956"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="496" Width="828">

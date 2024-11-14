@@ -19,6 +19,8 @@ namespace KoiCareSystem
     /// </summary>
     public partial class ProductWindow : Window
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public ProductWindow()
         {
             InitializeComponent();
@@ -36,6 +38,19 @@ namespace KoiCareSystem
             PondWindow detailWindow = new();
             detailWindow.Show();
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
         }
     }
 }

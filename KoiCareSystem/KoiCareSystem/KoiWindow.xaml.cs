@@ -24,15 +24,21 @@ namespace KoiCareSystem
     {
         private readonly KoiService _koiService = new();
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public KoiWindow()
         {
             InitializeComponent();
-            LoadKois();
         }
 
         private void LoadKois()
         {
-            var kois = _koiService.GetAllKois();
+            if(LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in to view your koi.");
+                return;
+            }
+            var kois = _koiService.GetKoisByUserId(LoggedInUser.UserId);
             KoiListBox.ItemsSource = kois;
         }
 
@@ -41,9 +47,24 @@ namespace KoiCareSystem
             if (KoiListBox.SelectedItem is Koi selectedKoi)
             {
                 KoiDetailWindow detailWindow = new KoiDetailWindow(selectedKoi);
+                detailWindow.LoggedInUser = LoggedInUser;
                 detailWindow.Show();
                 this.Close();
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+            LoadKois();
         }
     }
 }

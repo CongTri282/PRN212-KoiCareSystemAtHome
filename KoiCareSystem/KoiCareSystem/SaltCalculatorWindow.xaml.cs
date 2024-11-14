@@ -21,6 +21,8 @@ namespace KoiCareSystem
     /// </summary>
     public partial class SaltCalculatorWindow : Window
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         private readonly PondService _pondService = new();
         private double _volume;
         private double _currentConcentration;
@@ -30,12 +32,11 @@ namespace KoiCareSystem
         public SaltCalculatorWindow()
         {
             InitializeComponent();
-            LoadPonds();
         }
 
         private void LoadPonds()
         {
-            var ponds = _pondService.GetAllPonds();
+            var ponds = _pondService.GetPondsByUserId(LoggedInUser.UserId);
             PondComboBox.ItemsSource = ponds;
             if (ponds.Any())
             {
@@ -91,6 +92,20 @@ namespace KoiCareSystem
                 double saltPerChange = (_volume * _waterChange * _desiredConcentration) / 10000;
                 ResultTextBlock.Text = $"Required Salt Amount: {saltAmount:F1} kg\nPer water change (refill): {saltPerChange:F2} kg";
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                Sidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+            LoadPonds();
         }
     }
 }

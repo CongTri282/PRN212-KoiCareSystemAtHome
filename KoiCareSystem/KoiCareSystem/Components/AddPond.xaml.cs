@@ -12,6 +12,8 @@ namespace KoiCareSystem.Components
     {
         private readonly PondService _pondService = new();
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public AddPond()
         {
             InitializeComponent();
@@ -63,7 +65,7 @@ namespace KoiCareSystem.Components
             {
                 var newPond = new Pond
                 {
-                    UserId = "U001", 
+                    UserId = LoggedInUser.UserId, 
                     Name = PondNameTextBox.Text,
                     Volume = volume,
                     Depth = depth,

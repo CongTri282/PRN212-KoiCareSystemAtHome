@@ -20,6 +20,7 @@ namespace KoiCareSystem
     /// </summary>
     public partial class SidebarControl : UserControl
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
         public SidebarControl()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace KoiCareSystem
         private void PondButton_Click(object sender, RoutedEventArgs e)
         {
             PondWindow pondWindow = new();
+            pondWindow.LoggedInUser = LoggedInUser;
             pondWindow.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -47,6 +49,7 @@ namespace KoiCareSystem
         private void KoisButton_Click(object sender, RoutedEventArgs e)
         {
             KoiWindow koiWindow = new();
+            koiWindow.LoggedInUser = LoggedInUser;
             koiWindow.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -54,6 +57,7 @@ namespace KoiCareSystem
         private void SaltButton_Click(object sender, RoutedEventArgs e)
         {
             SaltCalculatorWindow saltCalculatorWindow = new();
+            saltCalculatorWindow.LoggedInUser = LoggedInUser;
             saltCalculatorWindow.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -61,6 +65,7 @@ namespace KoiCareSystem
         private void FoodButton_Click(object sender, RoutedEventArgs e)
         {
             FoodCalculatorWindow foodCalculatorWindow = new();
+            foodCalculatorWindow.LoggedInUser = LoggedInUser;
             foodCalculatorWindow.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -68,6 +73,7 @@ namespace KoiCareSystem
         private void RecommendButton_Click(object sender, RoutedEventArgs e)
         {
             ProductWindow productWindow = new();
+            productWindow.LoggedInUser = LoggedInUser;
             productWindow.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -75,6 +81,7 @@ namespace KoiCareSystem
         private void ParameterButton_Click(object sender, RoutedEventArgs e)
         {
             MeasurementsWindow measurementsWindow = new();
+            measurementsWindow.LoggedInUser = LoggedInUser;
             measurementsWindow.Show();
             Window.GetWindow(this)?.Close();
         }
