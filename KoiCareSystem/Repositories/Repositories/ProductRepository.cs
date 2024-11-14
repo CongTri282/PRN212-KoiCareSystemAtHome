@@ -9,7 +9,7 @@ namespace Repositories.Repositories
 {
     public class ProductRepository
     {
-        private KoiCareSystemContext _context;
+        private KoiCareSystemContext? _context;
 
 
         public List<ExternalProduct> GetAll()

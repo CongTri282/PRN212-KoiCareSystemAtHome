@@ -9,7 +9,7 @@ namespace Repositories.Repositories
 {
     public class KoiRepository
     {
-        private KoiCareSystemContext _context;
+        private KoiCareSystemContext? _context;
 
         public List<Koi> GetAllKois()
         {

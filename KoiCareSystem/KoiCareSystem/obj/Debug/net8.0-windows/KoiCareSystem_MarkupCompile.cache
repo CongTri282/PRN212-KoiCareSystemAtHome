@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\PRN211\PRN212-KoiCareSystemAtHome\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\
+E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\obj\Debug\net8.0-windows\
 KoiCareSystem
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\PRN211\PRN212-KoiCareSystemAtHome\KoiCareSystem\KoiCareSystem\App.xaml
-9195294226
+E:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\App.xaml
+16-1543635039
 
-12-1702687291
-246-1905236017
-AdminWindow.xaml;FoodCalculatorWindow.xaml;HomeWindow.xaml;KoiWindow.xaml;LoginWindow.xaml;MeasurementsWindow.xaml;PondWindow.xaml;ProductWindow.xaml;SaltCalculatorWindow.xaml;
+191314724046
+246-59748237
+AdminWindow.xaml;Components\AddKoi.xaml;Components\AddPond.xaml;Components\UpdateKoi.xaml;Components\UpdatePond.xaml;FoodCalculatorWindow.xaml;HomeWindow.xaml;KoiDetailWindow.xaml;KoiWindow.xaml;LoginWindow.xaml;MeasurementsWindow.xaml;PondDetailWindow.xaml;PondWindow.xaml;ProductWindow.xaml;SaltCalculatorWindow.xaml;SidebarControl.xaml;
 
-True
+False
 

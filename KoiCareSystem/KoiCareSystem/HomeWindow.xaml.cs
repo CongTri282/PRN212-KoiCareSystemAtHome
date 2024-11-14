@@ -28,7 +28,7 @@ namespace KoiCareSystem
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            WelcomeLabel.Text = "Welcome: " + user.Name;
+            WelcomeLabel.Text = "Welcome: " + User.Name;
         }
     }
 }
