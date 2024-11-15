@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KoiCareSystem.Components;
+using Repositories.Entities;
+using Services.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace KoiCareSystem
 {
-    /// <summary>
-    /// Interaction logic for MeasurementsWindow.xaml
-    /// </summary>
     public partial class MeasurementsWindow : Window
     {
+        private readonly MeasurementService _service = new();
+
         public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public MeasurementsWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoadPonds()
+        {
+            if (LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in to view your measurements.");
+                return;
+            }
+            var ponds = _service.GetMeasurementsByUserId(LoggedInUser.UserId);
+            MeansDataGrid.ItemsSource = ponds;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -36,6 +39,15 @@ namespace KoiCareSystem
                 MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Application.Current.Shutdown();
             }
+            LoadPonds();
+        }
+
+        private void AddMea_Click(object sender, RoutedEventArgs e)
+        {
+            AddMeasurement addMeasurement = new();
+            addMeasurement.LoggedInUser = LoggedInUser;
+            addMeasurement.ShowDialog();
+            LoadPonds();
         }
     }
 }

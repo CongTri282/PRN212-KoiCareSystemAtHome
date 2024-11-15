@@ -5,6 +5,7 @@ FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\AdminSidebarControl.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\AdminUser.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\Components\AddKoi.xaml;;
+FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\Components\AddMeasurement.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\Components\AddPond.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\Components\AddUser.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\Components\UpdateKoi.xaml;;
@@ -18,6 +19,7 @@ FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\MeasurementsWindow.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\PondDetailWindow.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\PondWindow.xaml;;
+FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\ProductDetailWindow.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\ProductWindow.xaml;;
 FE:\Semester5_Fall2024\PRN212\Project\KoiCareSystem\KoiCareSystem\KoiCareSystem\SaltCalculatorWindow.xaml;;
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Repositories.Entities;
+using Services.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +19,12 @@ namespace KoiCareSystem
     /// <summary>
     /// Interaction logic for ProductWindow.xaml
     /// </summary>
+    /// 
+
     public partial class ProductWindow : Window
     {
+        private readonly ProductService _service = new();
+
         public Repositories.Entities.User? LoggedInUser { get; set; }
 
         public ProductWindow()
@@ -26,19 +32,18 @@ namespace KoiCareSystem
             InitializeComponent();
         }
 
-        private void Button_Click1(object sender, RoutedEventArgs e)
+        private void LoadProduct()
         {
-            KoiWindow detailWindow = new();
-            detailWindow.Show();
-            this.Close();
+            if (LoggedInUser == null)
+            {
+                MessageBox.Show("Please log in to view your koi.");
+                return;
+            }
+            var kois = _service.GetAllProducts();
+            ProductListBox.ItemsSource = kois;
         }
-        private void Button_Click2(object sender, RoutedEventArgs e)
-        {
 
-            PondWindow detailWindow = new();
-            detailWindow.Show();
-            this.Close();
-        }
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -50,6 +55,18 @@ namespace KoiCareSystem
             {
                 MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Application.Current.Shutdown();
+            }
+            LoadProduct();
+        }
+
+        private void ProductListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ProductListBox.SelectedItem is ExternalProduct selected)
+            {
+                ProductDetailWindow detailWindow = new ProductDetailWindow(selected);
+                detailWindow.LoggedInUser = LoggedInUser;
+                detailWindow.Show();
+                this.Close();
             }
         }
     }

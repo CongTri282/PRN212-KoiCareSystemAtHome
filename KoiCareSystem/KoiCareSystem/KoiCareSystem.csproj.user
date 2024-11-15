@@ -25,6 +25,9 @@
     <Compile Update="Components\AddKoi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\AddMeasurement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\AddPond.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +76,9 @@
     <Compile Update="PondWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ProductDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ProductWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,6 +106,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\AddKoi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\AddMeasurement.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\AddPond.xaml">
@@ -148,6 +157,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PondWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProductDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ProductWindow.xaml">
