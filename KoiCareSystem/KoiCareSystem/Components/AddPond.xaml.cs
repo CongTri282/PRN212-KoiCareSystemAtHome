@@ -19,6 +19,12 @@ namespace KoiCareSystem.Components
             InitializeComponent();
         }
 
+        private bool ValidateUri(string uri)
+        {
+            return Uri.TryCreate(uri, UriKind.Absolute, out Uri? validatedUri)
+                   && (validatedUri.Scheme == Uri.UriSchemeHttp || validatedUri.Scheme == Uri.UriSchemeHttps);
+        }
+
         private void AddPondButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -58,6 +64,13 @@ namespace KoiCareSystem.Components
             if (!int.TryParse(SkimmerTextBox.Text, out int skimmer))
             {
                 ValidationMessageTextBlock.Text = "Skimmer must be a valid integer.";
+                return;
+            }
+
+            string uri = ThumbnailTextBox.Text;
+            if (!ValidateUri(uri))
+            {
+                MessageBox.Show("Invalid URI");
                 return;
             }
 

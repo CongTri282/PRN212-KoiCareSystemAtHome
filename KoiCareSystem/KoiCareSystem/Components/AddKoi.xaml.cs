@@ -33,6 +33,12 @@ namespace KoiCareSystem.Components
             InitializeComponent();
         }
 
+        private bool ValidateUri(string uri)
+        {
+            return Uri.TryCreate(uri, UriKind.Absolute, out Uri? validatedUri)
+                   && (validatedUri.Scheme == Uri.UriSchemeHttp || validatedUri.Scheme == Uri.UriSchemeHttps);
+        }
+
         private void AddKoiButton_Click(object sender, RoutedEventArgs e)
         {
             ValidationMessageTextBlock.Text = string.Empty;
@@ -94,6 +100,13 @@ namespace KoiCareSystem.Components
             if (_pond == null)
             {
                 ValidationMessageTextBlock.Text = "Pond information is missing.";
+                return;
+            }
+
+            string uri = ThumbnailTextBox.Text;
+            if (!ValidateUri(uri))
+            {
+                MessageBox.Show("Invalid URI");
                 return;
             }
 

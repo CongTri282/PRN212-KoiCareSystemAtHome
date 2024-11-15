@@ -50,6 +50,9 @@ namespace KoiCareSystem
                 if (!string.IsNullOrEmpty(pond.Thumbnail))
                 {
                     PondThumbnail.Source = new BitmapImage(new Uri(pond.Thumbnail));
+                } else
+                {
+                    PondThumbnail.Source = new BitmapImage(new Uri("https://via.placeholder.com/150"));
                 }
 
                 PondName.Text = pond.Name;

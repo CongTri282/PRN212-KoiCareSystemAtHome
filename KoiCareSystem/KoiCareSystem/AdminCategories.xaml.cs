@@ -13,6 +13,8 @@ namespace KoiCareSystem
     {
         private readonly CategoryService _categoryService;
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
+
         public AdminCategories()
         {
             InitializeComponent();
@@ -60,6 +62,26 @@ namespace KoiCareSystem
             else
             {
                 MessageBox.Show("Please select a category to delete.");
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                AdminSidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+
+            if (LoggedInUser.Role == "manager")
+            {
+                AddCateButton.Visibility = Visibility.Collapsed;
+                UpdateCateButton.Visibility = Visibility.Collapsed;
+                DeleteCateButton.Visibility = Visibility.Collapsed;
             }
         }
     }

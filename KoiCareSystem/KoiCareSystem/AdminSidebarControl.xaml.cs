@@ -20,6 +20,7 @@ namespace KoiCareSystem
     /// </summary>
     public partial class AdminSidebarControl : UserControl
     {
+        public Repositories.Entities.User? LoggedInUser { get; set; }
         public AdminSidebarControl()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace KoiCareSystem
         private void UsersButton_Click(object sender, RoutedEventArgs e)
         {
             AdminUser adminUser = new();
+            adminUser.LoggedInUser = LoggedInUser;
             adminUser.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -35,6 +37,7 @@ namespace KoiCareSystem
         private void CategoriesButton_Click(object sender, RoutedEventArgs e)
         {
             AdminCategories adminCategories = new();
+            adminCategories.LoggedInUser = LoggedInUser;
             adminCategories.Show();
             Window.GetWindow(this)?.Close();
         }
@@ -42,6 +45,7 @@ namespace KoiCareSystem
         private void RecommendationButton_Click(object sender, RoutedEventArgs e)
         {
             AdminRecommendation adminRecommendation = new();
+            adminRecommendation.LoggedInUser = LoggedInUser;
             adminRecommendation.Show();
             Window.GetWindow(this)?.Close();
         }

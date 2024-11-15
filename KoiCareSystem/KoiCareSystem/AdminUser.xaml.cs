@@ -61,5 +61,24 @@ namespace KoiCareSystem
                 MessageBox.Show("Please select a user to delete.");
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                AdminSidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+
+            if (LoggedInUser.Role == "manager") {
+                AddUserButton.Visibility = Visibility.Collapsed;
+                UpdateUserButton.Visibility = Visibility.Collapsed;
+                DeleteUserButton.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

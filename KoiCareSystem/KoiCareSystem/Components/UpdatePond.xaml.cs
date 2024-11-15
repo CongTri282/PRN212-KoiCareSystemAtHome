@@ -62,6 +62,12 @@ namespace KoiCareSystem.Components
             }
         }
 
+        private bool ValidateUri(string uri)
+        {
+            return Uri.TryCreate(uri, UriKind.Absolute, out Uri? validatedUri)
+                   && (validatedUri.Scheme == Uri.UriSchemeHttp || validatedUri.Scheme == Uri.UriSchemeHttps);
+        }
+
         private bool ValidateFields()
         {
             if (string.IsNullOrWhiteSpace(NameTextBox.Text))
@@ -97,6 +103,13 @@ namespace KoiCareSystem.Components
             if (!int.TryParse(SkimmerTextBox.Text, out int skimmer) || skimmer <= 0)
             {
                 MessageBox.Show("Skimmer must be a positive integer.");
+                return false;
+            }
+
+            string uri = ThumbnailTextBox.Text;
+            if (!ValidateUri(uri))
+            {
+                MessageBox.Show("Invalid URI");
                 return false;
             }
 

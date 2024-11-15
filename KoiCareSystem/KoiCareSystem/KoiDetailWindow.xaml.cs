@@ -33,25 +33,43 @@ namespace KoiCareSystem
         {
             InitializeComponent();
             _koi = koi;
-            DisplayKoiDetails();
+            try
+            {
+                DisplayKoiDetails();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while displaying koi details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void DisplayKoiDetails()
         {
-            if (_koi == null)
+            try
             {
-                MessageBox.Show("Koi details are not available.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                if (_koi == null)
+                {
+                    MessageBox.Show("Koi details are not available.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-            KoiThumbnail.Source = !string.IsNullOrEmpty(_koi.Thumbnail) ? new BitmapImage(new Uri(_koi.Thumbnail)) : null;
-            KoiName.Text = _koi.Name ?? "N/A";
-            KoiAge.Text = _koi.Age.ToString();
-            KoiLength.Text = _koi.Length.ToString();
-            KoiWeight.Text = _koi.Weight.ToString();
-            KoiColor.Text = _koi.Color ?? "N/A";
-            KoiVariety.Text = _koi.Variety ?? "N/A";
-            KoiSex.Text = _koi.Sex ?? "N/A";
+                if(!string.IsNullOrEmpty(_koi.Thumbnail))
+                {
+                    KoiThumbnail.Source = new BitmapImage(new Uri(_koi.Thumbnail));
+                }
+
+                KoiName.Text = _koi.Name ?? "N/A";
+                KoiAge.Text = _koi.Age.ToString();
+                KoiLength.Text = _koi.Length.ToString();
+                KoiWeight.Text = _koi.Weight.ToString();
+                KoiColor.Text = _koi.Color ?? "N/A";
+                KoiVariety.Text = _koi.Variety ?? "N/A";
+                KoiSex.Text = _koi.Sex ?? "N/A";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while displaying koi details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void UpdateKoiButton_Click(object sender, RoutedEventArgs e)

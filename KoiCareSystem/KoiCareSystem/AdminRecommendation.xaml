@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="AdminRecommendation" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="AdminRecommendation" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <DockPanel>
         <local:AdminSidebarControl x:Name="AdminSidebar" DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <StackPanel>
                 <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Recommendations" VerticalAlignment="Top" Width="456" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10px, 50px, 10px, 10px" Height="68" Width="1123">
-                    <Button Content="Add Recommendation" Click="AddRecommendation_Click" Margin="5" Width="332" FontSize="30"/>
-                    <Button Content="Update Recommendation" Click="UpdateRecommendation_Click" Margin="5" Width="370" FontSize="30"/>
-                    <Button Content="Delete Recommendation" Click="DeleteRecommendation_Click" Margin="5" Width="374" FontSize="30"/>
+                    <Button x:Name="AddProductButton" Content="Add Recommendation" Click="AddRecommendation_Click" Margin="5" Width="332" FontSize="30"/>
+                    <Button x:Name="UpdateProductButton" Content="Update Recommendation" Click="UpdateRecommendation_Click" Margin="5" Width="370" FontSize="30"/>
+                    <Button x:Name="DeleteProductButton" Content="Delete Recommendation" Click="DeleteRecommendation_Click" Margin="5" Width="374" FontSize="30"/>
                 </StackPanel>
                 <DataGrid x:Name="RecommendationDataGrid" AutoGenerateColumns="False" Height="680" Margin="50px,50px,50px,50px" FontSize="30">
                     <DataGrid.Columns>

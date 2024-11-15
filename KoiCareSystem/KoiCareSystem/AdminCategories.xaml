@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiCareSystem"
         mc:Ignorable="d"
-        Title="AdminCategories" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="AdminCategories" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <DockPanel>
         <local:AdminSidebarControl x:Name="AdminSidebar" DockPanel.Dock="Left"/>
         <Grid Background="#FAEEE6">
             <StackPanel>
                 <TextBlock HorizontalAlignment="Center" Height="77" Margin="0,83,0,0" TextWrapping="Wrap" Text="Category Management" Width="241" FontSize="48" FontWeight="ExtraBlack" Foreground="#FF6D2800"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10px, 50px, 10px, 10px" Height="68" Width="730">
-                    <Button Content="Add Category" Click="AddCategory_Click" Margin="5" Width="232" FontSize="30"/>
-                    <Button Content="Update Category" Click="UpdateCategory_Click" Margin="5" Width="200" FontSize="30"/>
-                    <Button Content="Delete Category" Click="DeleteCategory_Click" Margin="5" Width="251" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10px, 50px, 10px, 10px" Height="68" Width="798">
+                    <Button x:Name="AddCateButton" Content="Add Category" Click="AddCategory_Click" Margin="5" Width="232" FontSize="30"/>
+                    <Button x:Name="UpdateCateButton" Content="Update Category" Click="UpdateCategory_Click" Margin="5" Width="269" FontSize="30"/>
+                    <Button x:Name="DeleteCateButton" Content="Delete Category" Click="DeleteCategory_Click" Margin="5" Width="251" FontSize="30"/>
                 </StackPanel>
                 <DataGrid x:Name="CategoryDataGrid" AutoGenerateColumns="False" Height="680" Margin="50px,50px,50px,50px" FontSize="30">
                     <DataGrid.Columns>

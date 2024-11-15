@@ -16,6 +16,12 @@ namespace KoiCareSystem.Components
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(NameTextBox.Text))
+            {
+                MessageBox.Show("Category name is required.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             var newCategory = new Category
             {
                 Name = NameTextBox.Text,
@@ -23,8 +29,16 @@ namespace KoiCareSystem.Components
                 CreatedAt = DateTime.Now
             };
 
-            _categoryService.AddCategory(newCategory);
-            this.Close();
+            try
+            {
+                _categoryService.AddCategory(newCategory);
+                MessageBox.Show("Category added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the category: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

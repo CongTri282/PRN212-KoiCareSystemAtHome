@@ -67,6 +67,12 @@ namespace KoiCareSystem.Components
             }
         }
 
+        private bool ValidateUri(string uri)
+        {
+            return Uri.TryCreate(uri, UriKind.Absolute, out Uri? validatedUri)
+                   && (validatedUri.Scheme == Uri.UriSchemeHttp || validatedUri.Scheme == Uri.UriSchemeHttps);
+        }
+
         private bool ValidateFields()
         {
             if (string.IsNullOrWhiteSpace(NameTextBox.Text))
@@ -108,6 +114,13 @@ namespace KoiCareSystem.Components
             if (string.IsNullOrWhiteSpace(SexTextBox.Text))
             {
                 MessageBox.Show("Sex is required.");
+                return false;
+            }
+
+            string uri = ThumbnailTextBox.Text;
+            if (!ValidateUri(uri))
+            {
+                MessageBox.Show("Invalid URI");
                 return false;
             }
 

@@ -12,7 +12,11 @@
             <TextBox x:Name="EmailTextBox" Text="Email" Margin="5" FontSize="24"/>
             <TextBox x:Name="PasswordTextBox" Text="Password" Margin="5" FontSize="24"/>
             <TextBox x:Name="NameTextBox" Text="Name" Margin="5" FontSize="24"/>
-            <TextBox x:Name="RoleTextBox" Text="Role" Margin="5" FontSize="24"/>
+            <ComboBox x:Name="RoleComboBox" Margin="5" FontSize="24">
+                <ComboBoxItem Content="member"/>
+                <ComboBoxItem Content="admin"/>
+                <ComboBoxItem Content="manager"/>
+            </ComboBox>
         </StackPanel>
         <Button Content="Add User" Click="AddUserButton_Click" Margin="0,295,0,83" FontSize="24" HorizontalAlignment="Center" Width="136"/>
     </Grid>

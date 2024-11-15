@@ -9,6 +9,7 @@ namespace KoiCareSystem
     {
         private readonly ProductService _productService = new();
 
+        public Repositories.Entities.User? LoggedInUser { get; set; }
         public AdminRecommendation()
         {
             InitializeComponent();
@@ -45,12 +46,36 @@ namespace KoiCareSystem
         {
             if (RecommendationDataGrid.SelectedItem is ExternalProduct selectedProduct)
             {
-                _productService.DeleteProduct(selectedProduct);
-                LoadProducts();
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    _productService.DeleteProduct(selectedProduct);
+                    LoadProducts();
+                }
             }
             else
             {
                 MessageBox.Show("Please select a product to delete.");
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                AdminSidebar.LoggedInUser = LoggedInUser;
+            }
+            else
+            {
+                MessageBox.Show("Logged in user information is missing.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
+
+            if (LoggedInUser.Role == "manager")
+            {
+                AddProductButton.Visibility = Visibility.Collapsed;
+                UpdateProductButton.Visibility = Visibility.Collapsed;
+                DeleteProductButton.Visibility = Visibility.Collapsed;
             }
         }
     }

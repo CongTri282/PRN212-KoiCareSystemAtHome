@@ -10,9 +10,9 @@
             <TextBox x:Name="PriceTextBox" Text="Price" Margin="5" FontSize="24"/>
             <TextBox x:Name="ThumbnailTextBox" Text="Thumbnail" Margin="5" FontSize="24"/>
             <TextBox x:Name="ExternalUrlTextBox" Text="External URL" Margin="5" FontSize="24"/>
-            <TextBox x:Name="CategoryIdTextBox" Text="Category ID" Margin="5" FontSize="24"/>
-            <TextBox x:Name="StatusTextBox" Text="Status" Margin="5" FontSize="24"/>
+            <ComboBox x:Name="CategoryComboBox" Margin="5" FontSize="24" DisplayMemberPath="Name" SelectedValuePath="CategoryId"/>
+            <CheckBox x:Name="StatusCheckBox" Content="Status" Margin="5" FontSize="24"/>
         </StackPanel>
-        <Button Content="Add Product" Click="AddUserButton_Click" Margin="0,448,0,83" FontSize="24" HorizontalAlignment="Center" Width="180"/>
+        <Button Content="Add Product" Click="AddUserButton_Click" Margin="0,413,0,118" FontSize="24" HorizontalAlignment="Center" Width="180" RenderTransformOrigin="0.515,0.305"/>
     </Grid>
 </Window>

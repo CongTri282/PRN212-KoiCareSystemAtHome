@@ -25,11 +25,25 @@ namespace KoiCareSystem.Components
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(NameTextBox.Text) || string.IsNullOrWhiteSpace(DescriptionTextBox.Text))
+            {
+                MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             _category.Name = NameTextBox.Text;
             _category.Description = DescriptionTextBox.Text;
 
-            _categoryService.UpdateCategory(_category);
-            this.Close();
+            try
+            {
+                _categoryService.UpdateCategory(_category);
+                MessageBox.Show("Category updated successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the category: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
